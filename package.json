@@ -4,19 +4,22 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js",
-    "start": "node index.js",
+    "dev": "nodemon ./dist/index.js",
+    "start": "node ./dist/index.js",
     "lint": "eslint"
   },
+  "type": "module",
   "keywords": [],
   "author": "Diego Nacimiento",
   "license": "MIT",
   "devDependencies": {
+    "@types/express": "^4.17.17",
     "eslint": "^8.47.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
     "nodemon": "^3.0.1",
-    "prettier": "^3.0.2"
+    "prettier": "^3.0.2",
+    "typescript": "^5.1.6"
   },
   "dependencies": {
     "express": "^4.18.2"
