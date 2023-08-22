@@ -1,12 +1,9 @@
 import express, { Router, Request } from "express";
-import multer from 'multer';
 import nodemailerService from "../services/nodemailer.service.js";
 import createPDF from "../api/pdfmake/pdfmakeApi.js";
 import { IDocDefinition } from "../types/pdf.js";
 
 const router: Router = express.Router();
-const storage = multer.memoryStorage();
-const upload = multer({ storage: storage });
 const service = new nodemailerService();
 
 router.post("/send-email", async (req: Request, res) => {

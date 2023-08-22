@@ -1,5 +1,4 @@
 import PdfPrinter from "pdfmake";
-import fs from "fs";
 import createDocDefinition from "./pdfContent.js";
 import { IDocDefinition } from "../../types/pdf.js";
 
@@ -30,9 +29,6 @@ const createPDF = (body: IDocDefinition) => {
   });
 
   return pdfBufferPromise;
-
-  // pdfDoc.pipe(fs.createWriteStream(`${urlBase}document.pdf`));
-  // pdfDoc.end();
 }
 
 export default createPDF;
