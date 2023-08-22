@@ -6,4 +6,6 @@ export interface IDocDefinition {
   price: string[];
   subTotal: string[];
   total: string;
+  email: string;
+  nameFile: string;
 }

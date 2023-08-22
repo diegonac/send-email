@@ -22,8 +22,17 @@ const createPDF = (body: IDocDefinition) => {
 
   const pdfDoc = printer.createPdfKitDocument(docDefinition);
 
-  pdfDoc.pipe(fs.createWriteStream(`${urlBase}document.pdf`));
-  pdfDoc.end();
+  const pdfBufferPromise = new Promise<Buffer>((resolve, reject) => {
+    const buffers: Buffer[] = [];
+    pdfDoc.on("data", buffer => buffers.push(buffer));
+    pdfDoc.on("end", () => resolve(Buffer.concat(buffers)));
+    pdfDoc.end();
+  });
+
+  return pdfBufferPromise;
+
+  // pdfDoc.pipe(fs.createWriteStream(`${urlBase}document.pdf`));
+  // pdfDoc.end();
 }
 
 export default createPDF;
