@@ -3,16 +3,18 @@ import fs from "fs";
 import createDocDefinition from "./pdfContent.js";
 import { IDocDefinition } from "../../types/pdf.js";
 
+const urlBase = "./src/api/pdfmake/";
+
+const fonts = {
+  Roboto: {
+    normal: `${urlBase}fonts/Roboto-Regular.ttf`,
+    bold: `${urlBase}fonts/Roboto-Medium.ttf`,
+    italics: `${urlBase}fonts/Roboto-Italic.ttf`,
+    bolditalics: `${urlBase}fonts/Roboto-MediumItalic.ttf`
+  },
+};
 
 const createPDF = (body: IDocDefinition) => {
-  const fonts = {
-    Roboto: {
-      normal: 'fonts/Roboto-Regular.ttf',
-      bold: 'fonts/Roboto-Medium.ttf',
-      italics: 'fonts/Roboto-Italic.ttf',
-      bolditalics: 'fonts/Roboto-MediumItalic.ttf'
-    },
-  };
 
   const printer: PdfPrinter = new PdfPrinter(fonts);
 
@@ -20,6 +22,8 @@ const createPDF = (body: IDocDefinition) => {
 
   const pdfDoc = printer.createPdfKitDocument(docDefinition);
 
-  pdfDoc.pipe(fs.createWriteStream("document.pdf"));
+  pdfDoc.pipe(fs.createWriteStream(`${urlBase}document.pdf`));
   pdfDoc.end();
 }
+
+export default createPDF;
