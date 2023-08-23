@@ -3,11 +3,11 @@ import { showDate, capitalizeWords } from "../../utils/dataUtils.js";
 import { IDocDefinition } from "../../types/pdf.js";
 
 const createDocDefinition = ({
-  client,
-  saleCondition,
-  products,
   amounts,
-  price,
+  client,
+  prices,
+  products,
+  saleCondition,
   subTotal,
   total,
 }: IDocDefinition): TDocumentDefinitions => {
@@ -24,7 +24,7 @@ const createDocDefinition = ({
         columns: [
           { stack: products, style: "products" },
           { stack: amounts, style: "amount" },
-          { stack: price, style: "price" },
+          { stack: prices, style: "price" },
           { stack: subTotal, style: "price" },
         ],
       },

@@ -1,6 +1,7 @@
 import express from "express";
 import routerApi from "./routes/index.js";
 import cors from "cors";
+import { boomErrorHandler, errorHandler, logErr } from "./middlewares/error.handler.js";
 
 const app = express();
 const PORT: number = 3000;
@@ -30,3 +31,7 @@ app.get("/", (req, res) => {
 })
 
 routerApi(app);
+
+app.use(logErr);
+app.use(boomErrorHandler);
+app.use(errorHandler);

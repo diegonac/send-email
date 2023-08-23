@@ -13,7 +13,7 @@ const fonts = {
   },
 };
 
-const createPDF = (body: IDocDefinition) => {
+const createPdf = (body: IDocDefinition) => {
 
   const printer: PdfPrinter = new PdfPrinter(fonts);
 
@@ -31,4 +31,4 @@ const createPDF = (body: IDocDefinition) => {
   return pdfBufferPromise;
 }
 
-export default createPDF;
+export default createPdf;
