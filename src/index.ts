@@ -1,7 +1,7 @@
 import express from "express";
 import routerApi from "./routes/index.js";
 import cors from "cors";
-import { boomErrorHandler, errorHandler, logErr } from "./middlewares/error.handler.js";
+import { boomErrorHandler, domainErrorHandler, errorHandler, logErr } from "./middlewares/error.handler.js";
 
 const app = express();
 const PORT: number = 3000;
@@ -18,6 +18,8 @@ app.use(cors({
   },
   methods: ['POST'],
 }));
+
+app.use(domainErrorHandler);
 
 app.listen(PORT, () => {
   console.log("Servidor levantado en el puerto: " + PORT);

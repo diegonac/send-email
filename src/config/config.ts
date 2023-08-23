@@ -7,6 +7,7 @@ const config = {
 	port: process.env.PORT || 3000,
   ggMail: process.env.ggMail,
   ggKey: process.env.ggKey,
+  myFrontend: process.env.myFrontend,
 };
 
 export { config };
