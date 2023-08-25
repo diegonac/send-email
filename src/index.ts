@@ -1,12 +1,13 @@
 import express from "express";
-import routerApi from "./routes/index.js";
-import cors from "cors";
 import { boomErrorHandler, domainErrorHandler, errorHandler, logErr } from "./middlewares/error.handler.js";
+import { config } from "./config/config.js";
+import cors from "cors";
+import routerApi from "./routes/index.js";
 
 const app = express();
 const PORT: number = 3000;
 
-const allowedOrigins = ['http://localhost:5173', 'http://192.168.100.153:5173', 'https://calculator-register.vercel.app'];
+const allowedOrigins = [config.myFrontend];
 
 app.use(cors({
   origin: (origin, callback) => {

@@ -1,6 +1,6 @@
 import boom from "@hapi/boom";
-import { NextFunction, Request, Response } from "express";
 import { config } from "../config/config.js";
+import { NextFunction, Request, Response } from "express";
 
 const logErr = (err: Error, req: Request, res: Response, next: NextFunction) => {
   console.log(err);
@@ -24,8 +24,8 @@ const boomErrorHandler = (err: Error, req: Request, res: Response, next: NextFun
 
 const domainErrorHandler = (req: Request, res: Response, next: NextFunction) => {
   const allowedOrigins = [config.myFrontend];
-  const origin = req.hostname;
-  if (allowedOrigins.includes(origin)) {
+  const origin = req.get("origin");
+  if (origin && allowedOrigins.includes(origin)) {
     res.setHeader('Access-Control-Allow-Origin', origin);
     next();
   } else {

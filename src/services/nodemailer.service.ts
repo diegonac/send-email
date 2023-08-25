@@ -1,6 +1,6 @@
 import nodemailer, { SendMailOptions } from "nodemailer";
+import { capitalizeWords, showDate } from "../utils/dataUtils.js";
 import { config } from "../config/config.js";
-import { showDate } from "../utils/dataUtils.js";
 
 class nodemailerService {
   async sendEmail(infoEmail: SendMailOptions) {
@@ -26,7 +26,7 @@ class nodemailerService {
   async sendPdf(email: string, pdfBuffer: Buffer, client: string) {
 
     try {
-      const nameFile = `${showDate()} - ${client}`;
+      const nameFile = `${showDate()} - ${capitalizeWords(client)}`;
       const mail = {
         from: `${config.ggMail}`,
         to: `${email}`,

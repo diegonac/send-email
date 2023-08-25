@@ -1,11 +1,11 @@
 import Joi from "joi";
 
 const amounts = Joi.array().items(Joi.string());
-const client = Joi.string();
+const client = Joi.string().allow("");
 const email = Joi.string().email();
 const prices = Joi.array().items(Joi.string());
-const products = Joi.array().items(Joi.string());
-const saleCondition = Joi.string();
+const products = Joi.array().items(Joi.string().allow(""));
+const saleCondition = Joi.string().allow("");
 const subTotal = Joi.array().items(Joi.string());
 const total = Joi.string();
 
