@@ -30,7 +30,7 @@ app.use(express.json());
 app.use(express.text());
 
 app.get("/", (req, res) => {
-  res.send("Hola mundo, primer servidor con typescript");
+  res.send("Hola mundo");
 })
 
 routerApi(app);
