@@ -2,14 +2,12 @@ import PdfPrinter from "pdfmake";
 import createDocDefinition from "./pdfContent.js";
 import { IDocDefinition } from "../../types/pdf.js";
 
-const urlBase = "./src/api/pdfmake/";
-
 const fonts = {
   Roboto: {
-    normal: `${urlBase}fonts/Roboto-Regular.ttf`,
-    bold: `${urlBase}fonts/Roboto-Medium.ttf`,
-    italics: `${urlBase}fonts/Roboto-Italic.ttf`,
-    bolditalics: `${urlBase}fonts/Roboto-MediumItalic.ttf`
+    normal: `fonts/Roboto-Regular.ttf`,
+    bold: `fonts/Roboto-Medium.ttf`,
+    italics: `fonts/Roboto-Italic.ttf`,
+    bolditalics: `fonts/Roboto-MediumItalic.ttf`
   },
 };
 
