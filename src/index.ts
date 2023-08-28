@@ -5,7 +5,7 @@ import cors from "cors";
 import routerApi from "./routes/index.js";
 
 const app = express();
-const PORT: number = 3000;
+const PORT = config.port || 3000;
 
 const allowedOrigins = [config.myFrontend];
 
