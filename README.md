@@ -34,7 +34,7 @@ To configure email sending, ensure you have a Google account linked to your phon
 
 - ggKey: Use the generated password; do not share it with anyone.
 
-- myFrontend: Use the URL of your project (in production) or http://localhost:3000 (in development).
+- myFrontend: Use the URL of your project (in production) or http://localhost:5173 (in development).
 
 
 ***
@@ -73,7 +73,9 @@ The POST request should send a body as shown below:
 ***
 
 ## Starting the project
-To start the project, use the following command:
+To start the project, use the following commands:
+
+```npx tsc```
 
 ```npm run dev```
 

@@ -32,7 +32,7 @@ Para configurar el envío de correos electrónicos, asegúrate de tener una cuen
 
 - ggKey: Utiliza la contraseña generada; no la compartas con nadie.
 
-- myFrontend: Utiliza la url de tu proyecto (en producción) o http://localhost:3000 (en desarrollo)
+- myFrontend: Utiliza la url de tu proyecto (en producción) o http://localhost:5173 (en desarrollo)
 
 
 ***
@@ -71,7 +71,9 @@ La solicitud POST debe enviar un body como se muestra a continuación:
 ***
 
 ## Inicio del proyecto
-Para iniciar el proyecto, utiliza el siguiente comando:
+Para iniciar el proyecto, utiliza los siguientes comandos:
+
+```npx tsc```
 
 ```npm run dev```
 
