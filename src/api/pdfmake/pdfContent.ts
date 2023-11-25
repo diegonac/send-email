@@ -14,19 +14,25 @@ const createDocDefinition = ({
   const docDefinition: TDocumentDefinitions = {
     content: [
       { text: showDate(), style: "date" },
-      { text: "Detalle:", style: "title" },
+      { text: "Resumen", style: "title" },
       { text: `Cliente: ${capitalizeWords(client)}`, style: "info" },
       {
         text: `Condición de la venta: ${saleCondition.toLowerCase()}`,
         style: "info",
       },
       {
-        columns: [
-          { stack: products, style: "products" },
-          { stack: amounts, style: "amount" },
-          { stack: prices, style: "price" },
-          { stack: subTotal, style: "price" },
-        ],
+        layout: "lightHorizontalLines",
+        table: {
+          headerRows: 1,
+          widths: ["*", "auto", 100, "*"],
+
+          body: products.map((item, index) => [
+            { text: item, style: "products" },
+            { text: amounts[index], style: "amount" },
+            { text: prices[index], style: "price" },
+            { text: subTotal[index], style: "price" },
+          ]),
+        },
       },
       {
         columns: [
@@ -39,7 +45,7 @@ const createDocDefinition = ({
       title: {
         margin: [0, 15],
         characterSpacing: 1,
-        fontSize: 26,
+        fontSize: 20,
       },
       date: {
         margin: [0, 15],
@@ -54,19 +60,19 @@ const createDocDefinition = ({
         margin: [0, 15],
         alignment: "left",
         characterSpacing: 1,
-        fontSize: 16,
+        fontSize: 13,
       },
       amount: {
         margin: [0, 15],
         alignment: "center",
         characterSpacing: 1,
-        fontSize: 16,
+        fontSize: 13,
       },
       price: {
         margin: [0, 15],
         alignment: "right",
         characterSpacing: 1,
-        fontSize: 16,
+        fontSize: 13,
       },
       totalString: {
         margin: [0, 15],
