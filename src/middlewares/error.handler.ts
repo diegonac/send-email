@@ -1,5 +1,5 @@
 import boom from "@hapi/boom";
-import { config } from "../config/config.js";
+import { config } from "../config/config";
 import { NextFunction, Request, Response } from "express";
 
 const logErr = (err: Error, req: Request, res: Response, next: NextFunction) => {

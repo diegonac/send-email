@@ -1,5 +1,5 @@
 import express, { Application, Router } from "express";
-import nodemailerRouter from "./nodemailer.router.js";
+import nodemailerRouter from "./nodemailer.router";
 
 const routerApi = (app: Application): void => {
   const router: Router = express.Router();

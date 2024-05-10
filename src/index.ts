@@ -1,8 +1,8 @@
 import express from "express";
-import { boomErrorHandler, domainErrorHandler, errorHandler, logErr } from "./middlewares/error.handler.js";
-import { config } from "./config/config.js";
+import { boomErrorHandler, domainErrorHandler, errorHandler, logErr } from "./middlewares/error.handler";
+import { config } from "./config/config";
 import cors from "cors";
-import routerApi from "./routes/index.js";
+import routerApi from "./routes/index";
 
 const app = express();
 const PORT = config.port || 3000;
@@ -38,3 +38,5 @@ routerApi(app);
 app.use(logErr);
 app.use(boomErrorHandler);
 app.use(errorHandler);
+
+export default app;

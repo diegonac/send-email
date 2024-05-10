@@ -1,6 +1,6 @@
 import PdfPrinter from "pdfmake";
-import createDocDefinition from "./pdfContent.js";
-import { IDocDefinition } from "../../types/pdf.js";
+import createDocDefinition from "./pdfContent";
+import { IDocDefinition } from "../../types/pdf";
 
 const fonts = {
   Roboto: {

@@ -1,11 +1,11 @@
 import express, { Router, Request, Response, NextFunction } from "express";
 import boom from "@hapi/boom";
-import { config } from "../config/config.js";
-import createPdf from "../api/pdfmake/pdfmakeApi.js";
-import { IDocDefinition } from "../types/pdf.js";
-import nodemailerService from "../services/nodemailer.service.js";
-import sendPdfSchema from "../schemas/pdf.schema.js";
-import validatorHandler from "../middlewares/validator.handler.js";
+import { config } from "../config/config";
+import createPdf from "../api/pdfmake/pdfmakeApi";
+import { IDocDefinition } from "../types/pdf";
+import nodemailerService from "../services/nodemailer.service";
+import sendPdfSchema from "../schemas/pdf.schema";
+import validatorHandler from "../middlewares/validator.handler";
 
 const router: Router = express.Router();
 const service = new nodemailerService();

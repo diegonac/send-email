@@ -1,6 +1,6 @@
 import nodemailer, { SendMailOptions } from "nodemailer";
-import { capitalizeWords, showDate } from "../utils/dataUtils.js";
-import { config } from "../config/config.js";
+import { capitalizeWords, showDate } from "../utils/dataUtils";
+import { config } from "../config/config";
 
 class nodemailerService {
   async sendEmail(infoEmail: SendMailOptions) {

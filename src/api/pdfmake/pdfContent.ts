@@ -1,6 +1,6 @@
-import { TDocumentDefinitions } from "pdfmake/interfaces.js";
-import { showDate, capitalizeWords } from "../../utils/dataUtils.js";
-import { IDocDefinition } from "../../types/pdf.js";
+import { TDocumentDefinitions } from "pdfmake/interfaces";
+import { showDate, capitalizeWords } from "../../utils/dataUtils";
+import { IDocDefinition } from "../../types/pdf";
 
 const createDocDefinition = ({
   amounts,
