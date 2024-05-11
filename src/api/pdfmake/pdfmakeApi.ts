@@ -1,13 +1,16 @@
 import PdfPrinter from "pdfmake";
 import createDocDefinition from "./pdfContent";
 import { IDocDefinition } from "../../types/pdf";
+import { config } from "../../config/config";
+
+const basePath = config.env === "production" ? "/var/task/" : "./";
 
 const fonts = {
   Roboto: {
-    normal: `fonts/Roboto-Regular.ttf`,
-    bold: `fonts/Roboto-Medium.ttf`,
-    italics: `fonts/Roboto-Italic.ttf`,
-    bolditalics: `fonts/Roboto-MediumItalic.ttf`
+    normal: `${basePath}src/fonts/Roboto-Regular.ttf`,
+    bold: `${basePath}src/fonts/Roboto-Medium.ttf`,
+    italics: `${basePath}src/fonts/Roboto-Italic.ttf`,
+    bolditalics: `${basePath}src/fonts/Roboto-MediumItalic.ttf`
   },
 };
 
